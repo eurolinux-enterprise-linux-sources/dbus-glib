@@ -8,7 +8,7 @@
 Summary: GLib bindings for D-Bus
 Name: dbus-glib
 Version: 0.100
-Release: 4%{?dist}
+Release: 7%{?dist}
 URL: http://www.freedesktop.org/software/dbus/
 #VCS: git:git://git.freedesktop.org/git/dbus/dbus-glib
 Source0: http://dbus.freedesktop.org/releases/dbus-glib/%{name}-%{version}.tar.gz
@@ -57,6 +57,7 @@ D-Bus tools written using the gtk+ GUI libaries
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure --disable-tests \
@@ -112,6 +113,16 @@ rm -rf %{buildroot}
 %endif
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 0.100-7
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 0.100-6
+- Mass rebuild 2013-12-27
+
+* Mon Jul 01 2013 Colin Walters <walters@redhat.com> - 0.100-5
+- CVE-2013-0292  (previous patch was not actually applied)
+- Resolves: #911714
+
 * Fri Jun 21 2013 Matthias Clasen <mclasen@redhat.com> - 0.100-4
 - Don't install ChangeLog (need to save space on the live image)
 
