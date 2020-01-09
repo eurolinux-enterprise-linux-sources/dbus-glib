@@ -8,7 +8,7 @@
 Summary: GLib bindings for D-Bus
 Name: dbus-glib
 Version: 0.86
-Release: 5%{?dist}
+Release: 6%{?dist}
 URL: http://www.freedesktop.org/software/dbus/
 #VCS: git:git://git.freedesktop.org/git/dbus/dbus-glib
 Source0: http://dbus.freedesktop.org/releases/dbus-glib/%{name}-%{version}.tar.gz
@@ -29,6 +29,8 @@ BuildRequires: autoconf automake libtool gettext-devel gtk-doc
 Patch0: Respect-property-access-flags-for-writing-allow-disa.patch
 # Upstream http://cgit.freedesktop.org/dbus/dbus-glib/commit/?id=7f054d7bce4b2ea74e5268f2cf65c467773ee14f
 Patch1: 0001-Fix-lookup-of-regular-properties-when-shadow-propert.patch
+# Upstream http://cgit.freedesktop.org/dbus/dbus-glib/commit/?id=166978a09cf5edff4028e670b6074215a4c75eca
+Patch2: 0001-CVE-2013-0292-dbus-gproxy-Verify-sender-of-NameOwner.patch
 
 %description
 
@@ -64,6 +66,7 @@ D-Bus tools written using the gtk+ GUI libaries
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 
 %build
@@ -122,6 +125,10 @@ rm -rf %{buildroot}
 %endif
 
 %changelog
+* Wed Feb 20 2012 Colin Walters <walters@redhat.com> - 0.86-6
+- Add patch from upstream for CVE-2013-0292
+  Resolves: #913077
+
 * Wed Jul 14 2010 Colin Walters <walters@redhat.com> - 0.86-5
 - Add patch from upstream to fix shadow properties
   Resolves: #609628
