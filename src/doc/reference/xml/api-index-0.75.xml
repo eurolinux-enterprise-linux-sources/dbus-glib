@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY dbus-binding-tool SYSTEM "dbus-binding-tool.xml">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<indexdiv>
+<indexdiv><title>D</title>
+<indexentry><primaryie linkends="dbus-g-proxy-set-default-timeout"><link linkend="dbus-g-proxy-set-default-timeout">dbus_g_proxy_set_default_timeout</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>
